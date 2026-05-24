@@ -63,6 +63,7 @@ function Index() {
     <>
       <Hero />
       <Problem />
+      <AiNative />
       <Solution />
       <Migration />
       <Audience />
@@ -70,6 +71,50 @@ function Index() {
       <Pilot />
       <Faq />
     </>
+  );
+}
+
+function AiNative() {
+  const pillars = [
+    {
+      t: "Angebote in Minuten",
+      d: "Die KI versteht Kundenanfragen in natürlicher Sprache, dimensioniert das passende Equipment aus Ihrem Katalog und erstellt ein versandfertiges Angebot – inklusive Zubehör, Mengen und Preisen.",
+    },
+    {
+      t: "Kommunikation automatisiert",
+      d: "Nachfass-Mails, Reaktivierungs-Anschreiben, Antwortvorschläge im Innendienst-Chat. Stilrichtig, personalisiert, in Ihrem Tonfall – Sie geben nur noch frei.",
+    },
+    {
+      t: "Entscheidungen vorbereitet",
+      d: "Die KI priorisiert Anfragen nach Abschlusswahrscheinlichkeit, erkennt Engpässe im Inventar bevor sie entstehen und schlägt Aktionen vor, statt Sie in Listen suchen zu lassen.",
+    },
+  ];
+  return (
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-grid-fade opacity-40" />
+      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
+        <div className="max-w-3xl">
+          <div className="eyebrow text-accent">KI-nativ</div>
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+            KI ist nicht ein Modul. Sie ist <span className="text-accent">das Fundament</span>.
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Andere Anbieter kleben einen Chatbot an ihre Altsoftware. Rental Cockpit ist von
+            Grund auf um die KI herum gebaut – jeder Workflow nutzt sie, jedes Feature profitiert davon.
+            Das spart Vermietern nicht Minuten, sondern Stunden pro Tag.
+          </p>
+        </div>
+        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
+          {pillars.map((p, i) => (
+            <div key={p.t} className="bg-card p-7">
+              <div className="font-mono text-xs text-accent">0{i + 1}</div>
+              <h3 className="mt-3 font-display text-lg font-semibold">{p.t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -81,15 +126,16 @@ function Hero() {
       <div className="mx-auto max-w-6xl px-4 pt-20 pb-24 sm:px-6 lg:pt-28 lg:pb-32">
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          Aktuell im Aufbau · 10 Pilotplätze verfügbar
+          KI-nativ · Aktuell im Aufbau · 10 Pilotplätze verfügbar
         </div>
         <h1 className="mt-6 max-w-3xl text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-          Vermietsoftware,<br />die endlich modern ist.
+          Vermietsoftware,<br />die <span className="text-accent">mitdenkt</span>.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-          Rental Cockpit ist die KI-native Vermietplattform für DACH-Vermieter.
-          Buchung, CRM, Operations und Rechnung in einem System – schnell, intuitiv
-          und mit KI an jeder Stelle, wo sie wirklich hilft.
+          Rental Cockpit ist die <span className="text-foreground font-semibold">erste KI-native Vermietplattform</span> für DACH-Vermieter.
+          Buchung, CRM, Operations und Rechnung in einem System – mit KI als Fundament,
+          nicht als Plug-in. Angebote in Minuten, Kundenkommunikation auf Knopfdruck,
+          Routine erledigt sich selbst.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <a href="#pilot" className="group inline-flex h-12 items-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90">
