@@ -7,6 +7,7 @@ import {
 import { useState } from "react";
 import { PilotForm } from "@/components/PilotForm";
 import { EarlyAccessForm } from "@/components/EarlyAccessForm";
+import { InteractiveDemo } from "@/components/InteractiveDemo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -138,7 +139,7 @@ function Hero() {
           Routine erledigt sich selbst.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
-          <a href="#pilot" className="group inline-flex h-12 items-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90">
+          <a href="#pilot-form" className="group inline-flex h-12 items-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90">
             Pilotplatz anfragen
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
@@ -152,82 +153,13 @@ function Hero() {
           <span className="inline-flex items-center gap-1.5"><Server className="h-3.5 w-3.5" /> Hosting in Deutschland</span>
         </div>
 
-        <ProductMock />
+        <InteractiveDemo />
+
       </div>
     </section>
   );
 }
 
-function ProductMock() {
-  return (
-    <div className="mt-16 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-primary/10">
-      <div className="flex items-center gap-1.5 border-b border-border bg-surface px-4 py-3">
-        <div className="h-2.5 w-2.5 rounded-full bg-destructive/60" />
-        <div className="h-2.5 w-2.5 rounded-full bg-accent/70" />
-        <div className="h-2.5 w-2.5 rounded-full bg-primary/40" />
-        <div className="ml-3 text-xs text-muted-foreground">app.rentalcockpit.io / dashboard</div>
-      </div>
-      <div className="grid gap-0 md:grid-cols-[220px_1fr]">
-        <aside className="hidden border-r border-border bg-surface p-4 md:block">
-          {[
-            { i: <Sparkles className="h-4 w-4" />, l: "Dashboard", active: true },
-            { i: <FileText className="h-4 w-4" />, l: "Angebote" },
-            { i: <Users className="h-4 w-4" />, l: "CRM" },
-            { i: <Database className="h-4 w-4" />, l: "Inventar" },
-            { i: <Truck className="h-4 w-4" />, l: "Operations" },
-            { i: <Workflow className="h-4 w-4" />, l: "Rechnungen" },
-          ].map((n) => (
-            <div key={n.l} className={`mb-1 flex items-center gap-2 rounded-md px-3 py-2 text-sm ${n.active ? "bg-primary/10 text-primary font-medium" : "text-muted-foreground"}`}>
-              {n.i}{n.l}
-            </div>
-          ))}
-        </aside>
-        <div className="p-6">
-          <div className="grid gap-4 sm:grid-cols-3">
-            {[
-              { l: "Offene Angebote", v: "24", d: "+6 diese Woche" },
-              { l: "Auslastung", v: "78 %", d: "KW 38" },
-              { l: "Umsatz (MTD)", v: "142.300 €", d: "+12 % YoY" },
-            ].map((k) => (
-              <div key={k.l} className="rounded-xl border border-border p-4">
-                <div className="text-xs text-muted-foreground">{k.l}</div>
-                <div className="mt-1 font-display text-2xl font-bold">{k.v}</div>
-                <div className="mt-0.5 text-xs text-muted-foreground">{k.d}</div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-4 rounded-xl border border-border p-4">
-            <div className="flex items-center gap-2 text-sm font-medium">
-              <Bot className="h-4 w-4 text-accent" /> KI-Angebotsassistent
-            </div>
-            <div className="mt-3 space-y-2">
-              <div className="rounded-md bg-muted px-3 py-2 text-sm text-muted-foreground">
-                „Open Air für 500 Leute am 12.10. in Köln. Beschallung und Licht benötigt.“
-              </div>
-              <div className="rounded-md border border-accent/40 bg-accent/10 px-3 py-2 text-sm">
-                <span className="font-semibold text-accent">Rental Cockpit:</span> Danke für die Anfrage. Damit ich das passende Paket dimensioniere, kurze Rückfragen:
-                <ul className="mt-1.5 list-disc space-y-0.5 pl-4 text-sm text-muted-foreground">
-                  <li>Live-Act: DJ oder Band?</li>
-                  <li>Mikrofonierung für Reden / Moderation nötig?</li>
-                  <li>Auf- und Abbau am Veranstaltungstag oder zusätzliche Tage?</li>
-                </ul>
-              </div>
-              <div className="rounded-md bg-muted px-3 py-2 text-sm text-muted-foreground">
-                „DJ, Mikrofonierung für Begrüßung, Auf- und Abbau am selben Tag.“
-              </div>
-              <div className="rounded-md border border-primary/40 bg-primary/10 px-3 py-2 text-sm">
-                <span className="font-semibold text-primary">Angebot erstellt:</span> 4× Line-Array S10 · 1× Digital-Mischpult SQ-5 · 8× LED-Moving-Head · 4× Funkhandmikro · 2× Subwoofer · Inkl. Auf- und Abbau-Kraft · Verfügbar · 8.950 € netto
-              </div>
-              <p className="text-[11px] text-muted-foreground/60">
-                *Nur exemplarisch. Vorschläge und Preise basieren auf dem Inventar und der Preisstruktur des jeweiligen Vermieters und können abweichen.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function Problem() {
   const items = [
@@ -413,7 +345,7 @@ function Pilot() {
             </div>
           </div>
         </div>
-        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+        <div id="pilot-form" className="scroll-mt-24 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
           <h3 className="font-display text-xl font-semibold">Pilotplatz anfragen</h3>
           <p className="mt-1 text-sm text-muted-foreground">
             Wir melden uns innerhalb von 2 Werktagen mit einem Terminvorschlag.
