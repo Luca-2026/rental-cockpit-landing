@@ -1,10 +1,27 @@
 import { useState } from "react";
 import { z } from "zod";
 
+const COMPANY_SIZES = [
+  "1–5 Mitarbeitende",
+  "6–20 Mitarbeitende",
+  "21–50 Mitarbeitende",
+  "51–200 Mitarbeitende",
+  "Mehr als 200 Mitarbeitende",
+] as const;
+
 const schema = z.object({
   name: z.string().trim().min(2, "Bitte geben Sie Ihren Namen an.").max(120),
   company: z.string().trim().min(2, "Bitte geben Sie Ihr Unternehmen an.").max(150),
   email: z.string().trim().email("Bitte geben Sie eine gültige E-Mail-Adresse an.").max(255),
+  phone: z
+    .string()
+    .trim()
+    .min(5, "Bitte geben Sie eine gültige Telefonnummer an.")
+    .max(40)
+    .regex(/^[+0-9 ()/\-]+$/, "Bitte nur Ziffern und + ( ) / - verwenden."),
+  companySize: z.enum(COMPANY_SIZES, {
+    errorMap: () => ({ message: "Bitte wählen Sie eine Unternehmensgröße." }),
+  }),
   currentSoftware: z.string().trim().max(150).optional().or(z.literal("")),
   message: z.string().trim().max(2000).optional().or(z.literal("")),
   consent: z.literal(true, { errorMap: () => ({ message: "Bitte stimmen Sie der Datenverarbeitung zu." }) }),
@@ -23,6 +40,8 @@ export function PilotForm() {
       name: String(fd.get("name") ?? ""),
       company: String(fd.get("company") ?? ""),
       email: String(fd.get("email") ?? ""),
+      phone: String(fd.get("phone") ?? ""),
+      companySize: String(fd.get("companySize") ?? ""),
       currentSoftware: String(fd.get("currentSoftware") ?? ""),
       message: String(fd.get("message") ?? ""),
       consent: fd.get("consent") === "on",
@@ -68,6 +87,24 @@ export function PilotForm() {
       <Field label="Name" name="name" required error={errors.name} />
       <Field label="Unternehmen" name="company" required error={errors.company} />
       <Field label="E-Mail" name="email" type="email" required error={errors.email} />
+      <Field label="Telefon" name="phone" type="tel" required error={errors.phone} />
+      <div>
+        <label className="mb-1 block text-sm font-medium">
+          Unternehmensgröße <span className="text-destructive">*</span>
+        </label>
+        <select
+          name="companySize"
+          required
+          defaultValue=""
+          className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          <option value="" disabled>Bitte wählen…</option>
+          {COMPANY_SIZES.map((size) => (
+            <option key={size} value={size}>{size}</option>
+          ))}
+        </select>
+        {errors.companySize && <p className="mt-1 text-xs text-destructive">{errors.companySize}</p>}
+      </div>
       <Field label="Aktuelle Vermietsoftware (optional)" name="currentSoftware" error={errors.currentSoftware} />
       <div>
         <label className="mb-1 block text-sm font-medium">Nachricht (optional)</label>
@@ -95,7 +132,7 @@ export function PilotForm() {
         {loading ? "Wird gesendet…" : "Pilotplatz anfragen"}
       </button>
       <p className="text-xs text-muted-foreground">
-        Sie erhalten anschließend eine Bestätigungs-E-Mail (Double-Opt-in).
+        Sie erhalten anschließend eine Bestätigungs-E-Mail an die angegebene Adresse.
       </p>
     </form>
   );
