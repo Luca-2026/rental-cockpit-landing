@@ -267,15 +267,41 @@ export function InteractiveDemo() {
   }
 
   return (
-    <div className="mt-16 overflow-x-auto rounded-2xl border border-border bg-card shadow-2xl shadow-primary/10">
+    <div className="mt-16 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-primary/10">
       {/* Window chrome */}
-      <div className="flex items-center gap-1.5 border-b border-border bg-surface px-4 py-3">
-        <div className="h-2.5 w-2.5 rounded-full bg-destructive/60" />
-        <div className="h-2.5 w-2.5 rounded-full bg-accent/70" />
-        <div className="h-2.5 w-2.5 rounded-full bg-primary/40" />
-        <div className="ml-3 text-xs text-muted-foreground">app.rentalcockpit.io / {view}</div>
-        <div className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" /> Klickbare Live-Demo
+      <div className="flex items-center gap-1.5 border-b border-border bg-surface px-3 py-2.5 sm:px-4 sm:py-3">
+        <div className="h-2.5 w-2.5 shrink-0 rounded-full bg-destructive/60" />
+        <div className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent/70" />
+        <div className="h-2.5 w-2.5 shrink-0 rounded-full bg-primary/40" />
+        <div className="ml-2 min-w-0 flex-1 truncate text-[11px] text-muted-foreground sm:ml-3 sm:text-xs">
+          app.rentalcockpit.io / {view}
+        </div>
+        <div className="ml-2 inline-flex shrink-0 items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-2 py-1 text-[9px] font-semibold uppercase tracking-wider text-accent sm:px-2.5 sm:text-[10px]">
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
+          <span className="hidden xs:inline">Klickbare</span> Live-Demo
+        </div>
+      </div>
+
+      {/* Mobile module switcher (replaces sidebar on small screens) */}
+      <div className="border-b border-border bg-surface/60 md:hidden">
+        <div className="flex gap-1.5 overflow-x-auto px-3 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {NAV.map((n) => {
+            const active = view === n.key;
+            return (
+              <button
+                key={n.key}
+                onClick={() => setView(n.key)}
+                className={`inline-flex shrink-0 items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs transition ${
+                  active
+                    ? "bg-primary/10 text-primary font-medium"
+                    : "text-muted-foreground hover:bg-primary/5 hover:text-foreground"
+                }`}
+              >
+                {n.icon}
+                {n.label}
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -306,7 +332,7 @@ export function InteractiveDemo() {
           </div>
         </aside>
 
-        <div className="p-6">
+        <div className="min-w-0 p-3 sm:p-6">
           {view === "dashboard" && (
             <DashboardView
               scenario={scenario}
