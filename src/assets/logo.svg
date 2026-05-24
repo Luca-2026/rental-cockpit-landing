@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296 78" width="296" height="78" role="img" aria-label="RentalCockpit">
+  <rect width="296" height="78" fill="#0B1220"></rect>
+  <g>
+    <polygon points="32,13 48.454,22.5 48.454,41.5 32,51 15.546,41.5 15.546,22.5" fill="none" stroke="#F4F1EC" stroke-width="1" stroke-linejoin="round" opacity="0.18"></polygon>
+    <line x1="32" y1="32" x2="48.454" y2="22.5" stroke="#FF8B6B" stroke-width="1.6" stroke-linecap="round" opacity="0.9"></line>
+    <circle cx="32" cy="13" r="2.6" fill="#F4F1EC" opacity="0.85"></circle>
+    <circle cx="48.454" cy="41.5" r="2.6" fill="#F4F1EC" opacity="0.85"></circle>
+    <circle cx="32" cy="51" r="2.6" fill="#F4F1EC" opacity="0.85"></circle>
+    <circle cx="15.546" cy="41.5" r="2.6" fill="#F4F1EC" opacity="0.85"></circle>
+    <circle cx="15.546" cy="22.5" r="2.6" fill="#F4F1EC" opacity="0.85"></circle>
+    <circle cx="48.454" cy="22.5" r="7" fill="#FF8B6B" opacity="0.18"></circle>
+    <circle cx="48.454" cy="22.5" r="3.6" fill="#FF8B6B"></circle>
+    <circle cx="32" cy="32" r="5.4" fill="#F4F1EC"></circle>
+    <circle cx="32" cy="32" r="2.2" fill="#FF8B6B"></circle>
+  </g>
+  <text x="80" y="42.8" font-family="&#39;Geist&#39;, &#39;Inter&#39;, system-ui, -apple-system, sans-serif" font-size="30" letter-spacing="-0.022em" fill="#F4F1EC"><tspan font-weight="400">Rental</tspan><tspan font-weight="600" fill="#FF8B6B">Cockpit</tspan></text>
+  <text x="80" y="56.8" font-family="&#39;Geist Mono&#39;, &#39;JetBrains Mono&#39;, ui-monospace, monospace" font-size="9" letter-spacing="0.18em" fill="#F4F1EC" opacity="0.55" text-transform="uppercase">KI-GESTÜTZTE VERMIETUNG</text>
+</svg>
