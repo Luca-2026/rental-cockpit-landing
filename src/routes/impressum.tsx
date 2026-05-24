@@ -30,8 +30,7 @@ function Impressum() {
       <h2 className="mt-8 font-display text-xl font-semibold">Kontakt</h2>
       <p className="mt-3 text-sm leading-relaxed">
         Telefon: <a className="underline" href="tel:+4922876388805">0228 763 888 05</a><br />
-        E-Mail: <a className="underline" href="mailto:luca@sandhoff.org">luca@sandhoff.org</a><br />
-        <a className="underline" href="https://sandhoff.org/kontakt" target="_blank" rel="noreferrer">sandhoff.org/kontakt</a>
+        E-Mail: <a className="underline" href="mailto:luca@sandhoff.org">luca@sandhoff.org</a>
       </p>
 
       <h2 className="mt-8 font-display text-xl font-semibold">Umsatzsteuer</h2>
