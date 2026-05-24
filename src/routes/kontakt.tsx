@@ -8,9 +8,9 @@ export const Route = createFileRoute("/kontakt")({
       { name: "description", content: "Kontaktieren Sie das Team von Rental Cockpit – per E-Mail oder Telefon." },
       { property: "og:title", content: "Kontakt – Rental Cockpit" },
       { property: "og:description", content: "Kontaktieren Sie das Team von Rental Cockpit – per E-Mail oder Telefon." },
-      { property: "og:url", content: "/kontakt" },
+      { property: "og:url", content: "https://rentalcockpit.io/kontakt" },
     ],
-    links: [{ rel: "canonical", href: "/kontakt" }],
+    links: [{ rel: "canonical", href: "https://rentalcockpit.io/kontakt" }],
   }),
   component: Kontakt,
 });
