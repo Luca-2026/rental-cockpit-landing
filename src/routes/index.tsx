@@ -52,7 +52,7 @@ const FAQ_ITEMS = [
   { q: "Wann startet Rental Cockpit?", a: "Pilotphase ab Q3 2026, allgemeine Verfügbarkeit ab Q1 2027." },
   { q: "Welche Module sind beim Launch verfügbar?", a: "Zunächst KI-Angebote und KI-CRM. Operations und integrierte Rechnungsstellung folgen in der Pilotphase modulweise." },
   { q: "Kann ich von meiner aktuellen Vermietsoftware migrieren?", a: "Ja. Wir bieten kostenlose Migration für Pilotkunden. Schnittstellen zu gängigen Vermietsystemen sind in Vorbereitung." },
-  { q: "Wo werden meine Daten gespeichert?", a: "Ausschließlich in Deutschland (Frankfurt). DSGVO-konform, AVV verfügbar." },
+  { q: "Wo werden meine Daten gespeichert?", a: "Ausschließlich in Deutschland. DSGVO-konform, AVV verfügbar." },
   { q: "Was kostet Rental Cockpit?", a: "Transparente Pakete ab 499 €/Monat nach offizieller Markteinführung. Pilotkunden erhalten lebenslang vergünstigte Konditionen." },
   { q: "Brauche ich technisches Know-how?", a: "Nein. Onboarding, Migration und Schulung übernehmen wir." },
   { q: "Bin ich an einen langen Vertrag gebunden?", a: "Nein. Monatliche Kündigungsfrist nach dem ersten Pilotjahr." },
@@ -103,7 +103,7 @@ function Hero() {
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
           <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> Made in Germany</span>
           <span className="inline-flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5" /> DSGVO-konform</span>
-          <span className="inline-flex items-center gap-1.5"><Server className="h-3.5 w-3.5" /> Hosting Frankfurt</span>
+          <span className="inline-flex items-center gap-1.5"><Server className="h-3.5 w-3.5" /> Hosting in Deutschland</span>
         </div>
 
         <ProductMock />
@@ -119,7 +119,7 @@ function ProductMock() {
         <div className="h-2.5 w-2.5 rounded-full bg-destructive/60" />
         <div className="h-2.5 w-2.5 rounded-full bg-accent/70" />
         <div className="h-2.5 w-2.5 rounded-full bg-primary/40" />
-        <div className="ml-3 text-xs text-muted-foreground">app.rental-cockpit.io / dashboard</div>
+        <div className="ml-3 text-xs text-muted-foreground">app.rentalcockpit.io / dashboard</div>
       </div>
       <div className="grid gap-0 md:grid-cols-[220px_1fr]">
         <aside className="hidden border-r border-border bg-surface p-4 md:block">

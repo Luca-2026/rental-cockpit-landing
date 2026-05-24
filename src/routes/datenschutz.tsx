@@ -67,7 +67,7 @@ function Datenschutz() {
       <h2 className="mt-8 font-display text-xl font-semibold">7. Hosting</h2>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
         Unsere Website und alle personenbezogenen Daten werden ausschließlich in Deutschland
-        (Frankfurt am Main) gehostet. Eine Auftragsverarbeitungsvereinbarung (AVV) ist verfügbar.
+        gehostet. Eine Auftragsverarbeitungsvereinbarung (AVV) ist verfügbar.
       </p>
 
       <h2 className="mt-8 font-display text-xl font-semibold">8. Ihre Rechte</h2>
