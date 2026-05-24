@@ -1,15 +1,13 @@
 import { Link } from "@tanstack/react-router";
+import logoUrl from "@/assets/logo.svg";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
-          <div className="flex items-center gap-2 font-display text-base font-semibold">
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground text-xs font-bold">RC</span>
-            Rental Cockpit
-          </div>
-          <p className="mt-3 max-w-xs text-sm text-muted-foreground">
+          <img src={logoUrl} alt="Rental Cockpit" className="h-10 w-auto" />
+          <p className="mt-4 max-w-xs text-sm text-muted-foreground">
             Die moderne KI-Vermietplattform für DACH.
           </p>
         </div>

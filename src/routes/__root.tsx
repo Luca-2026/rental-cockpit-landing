@@ -63,7 +63,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Rental Cockpit – Die moderne KI-Vermietplattform für DACH" },
       { name: "description", content: "KI-native Vermietsoftware für DACH: Buchung, CRM, Operations & Rechnung in einem System. Migration in 14 Tagen. Jetzt Pilotplatz sichern." },
       { name: "author", content: "Sandhoff IT- & Mediensysteme" },
-      { name: "theme-color", content: "#0f1d3a" },
+      { name: "theme-color", content: "#0B1220" },
       { property: "og:site_name", content: "Rental Cockpit" },
       { property: "og:title", content: "Rental Cockpit – Die moderne KI-Vermietplattform für DACH" },
       { property: "og:description", content: "Buchung, CRM, Operations und Rechnung in einem System – KI-nativ gedacht. Pilotplätze verfügbar." },
@@ -75,8 +75,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" },
-      { rel: "icon", href: "/favicon.ico" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
     ],
     scripts: [
       {
