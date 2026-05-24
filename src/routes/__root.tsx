@@ -86,7 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Organization",
           name: "Rental Cockpit",
           legalName: "Sandhoff IT- & Mediensysteme",
-          url: "https://rental-cockpit.io",
+          url: "https://rentalcockpit.io",
           email: "luca@sandhoff.org",
           telephone: "+49 228 76388805",
           address: {

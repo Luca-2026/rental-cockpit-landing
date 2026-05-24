@@ -30,7 +30,7 @@ export function SiteFooter() {
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-2 px-4 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:px-6">
           <div>© {new Date().getFullYear()} Sandhoff IT- & Mediensysteme. Alle Rechte vorbehalten.</div>
-          <div>Made in Germany · Hosting Frankfurt · DSGVO-konform</div>
+          <div>Made in Germany · Hosting in Deutschland · DSGVO-konform</div>
         </div>
       </div>
     </footer>
