@@ -218,6 +218,9 @@ function ProductMock() {
               <div className="rounded-md border border-primary/40 bg-primary/10 px-3 py-2 text-sm">
                 <span className="font-semibold text-primary">Angebot erstellt:</span> 4× Line-Array S10 · 1× Digital-Mischpult SQ-5 · 8× LED-Moving-Head · 4× Funkhandmikro · 2× Subwoofer · Inkl. Auf- und Abbau-Kraft · Verfügbar · 8.950 € netto
               </div>
+              <p className="text-[11px] text-muted-foreground/60">
+                *Nur exemplarisch. Vorschläge und Preise basieren auf dem Inventar und der Preisstruktur des jeweiligen Vermieters und können abweichen.
+              </p>
             </div>
           </div>
         </div>
