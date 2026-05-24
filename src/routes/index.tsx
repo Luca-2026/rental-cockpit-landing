@@ -200,11 +200,24 @@ function ProductMock() {
             <div className="flex items-center gap-2 text-sm font-medium">
               <Bot className="h-4 w-4 text-accent" /> KI-Angebotsassistent
             </div>
-            <div className="mt-3 rounded-md bg-muted px-3 py-2 text-sm text-muted-foreground">
-              „Für ein Firmenevent am 12.10. in Köln, ca. 120 Gäste, draußen, Beschallung & Licht.“
-            </div>
-            <div className="mt-3 rounded-md border border-accent/40 bg-accent/10 px-3 py-2 text-sm">
-              Vorschlag: 2× Line-Array S8, 1× Mischpult X32, 6× LED PAR, 1× Stromverteiler 63 A · verfügbar · 4.180 € netto
+            <div className="mt-3 space-y-2">
+              <div className="rounded-md bg-muted px-3 py-2 text-sm text-muted-foreground">
+                „Open Air für 500 Leute am 12.10. in Köln. Beschallung und Licht benötigt.“
+              </div>
+              <div className="rounded-md border border-accent/40 bg-accent/10 px-3 py-2 text-sm">
+                <span className="font-semibold text-accent">Rental Cockpit:</span> Danke für die Anfrage. Damit ich das passende Paket dimensioniere, kurze Rückfragen:
+                <ul className="mt-1.5 list-disc space-y-0.5 pl-4 text-sm text-muted-foreground">
+                  <li>Live-Act: DJ oder Band?</li>
+                  <li>Mikrofonierung für Reden / Moderation nötig?</li>
+                  <li>Auf- und Abbau am Veranstaltungstag oder zusätzliche Tage?</li>
+                </ul>
+              </div>
+              <div className="rounded-md bg-muted px-3 py-2 text-sm text-muted-foreground">
+                „DJ, Mikrofonierung für Begrüßung, Auf- und Abbau am selben Tag.“
+              </div>
+              <div className="rounded-md border border-primary/40 bg-primary/10 px-3 py-2 text-sm">
+                <span className="font-semibold text-primary">Angebot erstellt:</span> 4× Line-Array S10 · 1× Digital-Mischpult SQ-5 · 8× LED-Moving-Head · 4× Funkhandmikro · 2× Subwoofer · Inkl. Auf- und Abbau-Kraft · Verfügbar · 8.950 € netto
+              </div>
             </div>
           </div>
         </div>
