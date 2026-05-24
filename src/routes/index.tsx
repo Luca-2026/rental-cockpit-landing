@@ -7,6 +7,7 @@ import {
 import { useState } from "react";
 import { PilotForm } from "@/components/PilotForm";
 import { EarlyAccessForm } from "@/components/EarlyAccessForm";
+import { InteractiveDemo } from "@/components/InteractiveDemo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
