@@ -7,9 +7,9 @@ export const Route = createFileRoute("/impressum")({
       { name: "description", content: "Impressum und Anbieterkennzeichnung gemäß § 5 DDG." },
       { property: "og:title", content: "Impressum – Rental Cockpit" },
       { property: "og:description", content: "Impressum und Anbieterkennzeichnung gemäß § 5 DDG." },
-      { property: "og:url", content: "/impressum" },
+      { property: "og:url", content: "https://rentalcockpit.io/impressum" },
     ],
-    links: [{ rel: "canonical", href: "/impressum" }],
+    links: [{ rel: "canonical", href: "https://rentalcockpit.io/impressum" }],
   }),
   component: Impressum,
 });

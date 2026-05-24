@@ -7,9 +7,9 @@ export const Route = createFileRoute("/datenschutz")({
       { name: "description", content: "Datenschutzerklärung von Rental Cockpit nach DSGVO." },
       { property: "og:title", content: "Datenschutz – Rental Cockpit" },
       { property: "og:description", content: "Datenschutzerklärung von Rental Cockpit nach DSGVO." },
-      { property: "og:url", content: "/datenschutz" },
+      { property: "og:url", content: "https://rentalcockpit.io/datenschutz" },
     ],
-    links: [{ rel: "canonical", href: "/datenschutz" }],
+    links: [{ rel: "canonical", href: "https://rentalcockpit.io/datenschutz" }],
   }),
   component: Datenschutz,
 });

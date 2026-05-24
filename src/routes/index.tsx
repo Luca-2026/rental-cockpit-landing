@@ -16,9 +16,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "KI-native Vermietsoftware für DACH-Vermieter: Buchung, CRM, Operations und Rechnung in einem System. Migration in 14 Tagen. Pilotplätze verfügbar." },
       { property: "og:title", content: "Rental Cockpit – Die moderne KI-Vermietplattform für DACH" },
       { property: "og:description", content: "Buchung, CRM, Operations und Rechnung in einem System – KI-nativ. Pilotplätze verfügbar." },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://rentalcockpit.io/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://rentalcockpit.io/" }],
     scripts: [
       {
         type: "application/ld+json",
