@@ -415,7 +415,7 @@ function Pilot() {
             </div>
           </div>
         </div>
-        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+        <div id="pilot-form" className="scroll-mt-24 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
           <h3 className="font-display text-xl font-semibold">Pilotplatz anfragen</h3>
           <p className="mt-1 text-sm text-muted-foreground">
             Wir melden uns innerhalb von 2 Werktagen mit einem Terminvorschlag.
