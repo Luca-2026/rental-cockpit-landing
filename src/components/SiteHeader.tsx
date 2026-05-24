@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoUrl from "@/assets/logo.svg";
 
 const nav = [
   { label: "Lösung", href: "/#loesung" },
@@ -14,9 +15,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link to="/" className="flex items-center gap-2 font-display text-base font-semibold tracking-tight">
-          <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground text-xs font-bold">RC</span>
-          <span>Rental Cockpit</span>
+        <Link to="/" aria-label="Rental Cockpit – Startseite" className="flex items-center">
+          <img src={logoUrl} alt="Rental Cockpit" className="h-9 w-auto" />
         </Link>
         <nav className="hidden items-center gap-7 md:flex">
           {nav.map((n) => (
