@@ -122,6 +122,17 @@ export function InteractiveDemo() {
   const [confirmed, setConfirmed] = useState(false);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const transcriptRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  function navigateTo(v: NavKey) {
+    setView(v);
+    requestAnimationFrame(() => {
+      const el = containerRef.current;
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  }
 
   const scenario = SCENARIOS[scenarioIdx];
   const offerTotal = scenario.offer.items.reduce((s, i) => s + i.qty * i.price, 0);
