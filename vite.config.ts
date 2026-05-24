@@ -22,4 +22,15 @@ export default defineConfig({
       { path: "/datenschutz" },
     ],
   },
+  vite: {
+    environments: {
+      ssr: {
+        build: {
+          rollupOptions: {
+            input: { server: "/src/server.ts" },
+          },
+        },
+      },
+    },
+  },
 });
