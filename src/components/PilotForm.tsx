@@ -84,15 +84,16 @@ export function PilotForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-4">
-      <Field label="Name" name="name" required error={errors.name} />
-      <Field label="Unternehmen" name="company" required error={errors.company} />
-      <Field label="E-Mail" name="email" type="email" required error={errors.email} />
-      <Field label="Telefon" name="phone" type="tel" required error={errors.phone} />
+      <Field id="pf-name" label="Name" name="name" required error={errors.name} autoComplete="name" />
+      <Field id="pf-company" label="Unternehmen" name="company" required error={errors.company} autoComplete="organization" />
+      <Field id="pf-email" label="E-Mail" name="email" type="email" required error={errors.email} autoComplete="email" />
+      <Field id="pf-phone" label="Telefon" name="phone" type="tel" required error={errors.phone} autoComplete="tel" />
       <div>
-        <label className="mb-1 block text-sm font-medium">
+        <label htmlFor="pf-companySize" className="mb-1 block text-sm font-medium">
           Unternehmensgröße <span className="text-destructive">*</span>
         </label>
         <select
+          id="pf-companySize"
           name="companySize"
           required
           defaultValue=""
@@ -105,18 +106,25 @@ export function PilotForm() {
         </select>
         {errors.companySize && <p className="mt-1 text-xs text-destructive">{errors.companySize}</p>}
       </div>
-      <Field label="Aktuelle Vermietsoftware (optional)" name="currentSoftware" error={errors.currentSoftware} />
+      <Field id="pf-currentSoftware" label="Aktuelle Vermietsoftware (optional)" name="currentSoftware" error={errors.currentSoftware} />
       <div>
-        <label className="mb-1 block text-sm font-medium">Nachricht (optional)</label>
+        <label htmlFor="pf-message" className="mb-1 block text-sm font-medium">Nachricht (optional)</label>
         <textarea
+          id="pf-message"
           name="message"
           rows={4}
           className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
         />
         {errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}
       </div>
-      <label className="flex items-start gap-3 text-sm text-muted-foreground">
-        <input type="checkbox" name="consent" className="mt-1 h-4 w-4 rounded border-input" />
+      <label htmlFor="pf-consent" className="flex items-start gap-3 text-sm text-muted-foreground">
+        <input
+          id="pf-consent"
+          type="checkbox"
+          name="consent"
+          aria-label="Einwilligung Datenverarbeitung"
+          className="mt-1 h-4 w-4 rounded border-input"
+        />
         <span>
           Ich willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden.
           Weitere Informationen in der <a className="underline" href="/datenschutz">Datenschutzerklärung</a>. *
@@ -139,17 +147,19 @@ export function PilotForm() {
 }
 
 function Field({
-  label, name, type = "text", required, error,
-}: { label: string; name: string; type?: string; required?: boolean; error?: string }) {
+  id, label, name, type = "text", required, error, autoComplete,
+}: { id: string; label: string; name: string; type?: string; required?: boolean; error?: string; autoComplete?: string }) {
   return (
     <div>
-      <label className="mb-1 block text-sm font-medium">
+      <label htmlFor={id} className="mb-1 block text-sm font-medium">
         {label} {required && <span className="text-destructive">*</span>}
       </label>
       <input
+        id={id}
         name={name}
         type={type}
         required={required}
+        autoComplete={autoComplete}
         className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
       />
       {error && <p className="mt-1 text-xs text-destructive">{error}</p>}

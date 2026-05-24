@@ -1,0 +1,12 @@
+# RentalCockpit
+
+> KI-gestützte Vermietsoftware für die DACH-Region: Angebote per Chat erstellen, Aufträge und Rechnungen automatisch generieren, CRM, Inventar und Operations in einem Cockpit.
+
+RentalCockpit kombiniert einen KI-Angebotsassistenten mit klassischen ERP-Bausteinen (CRM, Inventar, Operations, Rechnungen) für Vermieter von Equipment, Maschinen und Eventtechnik.
+
+## Pages
+
+- [Startseite](/): Produktübersicht, interaktive Live-Demo des KI-Angebotsassistenten, Early Access.
+- [Kontakt](/kontakt): Pilotplatz anfragen, direkter Kontakt zum Team.
+- [Impressum](/impressum): Anbieterkennzeichnung gemäß § 5 TMG.
+- [Datenschutz](/datenschutz): Datenschutzerklärung nach DSGVO.

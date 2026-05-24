@@ -622,6 +622,7 @@ function DashboardView(props: {
           <Sparkles className="h-4 w-4 text-accent" />
           <input
             readOnly
+            aria-label="Demo-Eingabe (Vorschau)"
             value={stage === "typing-user" ? draft : ""}
             placeholder={
               stage === "idle"
