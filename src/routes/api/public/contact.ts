@@ -10,6 +10,8 @@ const pilotSchema = z.object({
   name: z.string().trim().min(2).max(120),
   company: z.string().trim().min(2).max(150),
   email: z.string().trim().email().max(255),
+  phone: z.string().trim().min(5).max(40).regex(/^[+0-9 ()/\-]+$/),
+  companySize: z.string().trim().min(1).max(80),
   currentSoftware: z.string().trim().max(150).optional().default(""),
   message: z.string().trim().max(2000).optional().default(""),
   consent: z.literal(true),
@@ -87,7 +89,9 @@ export const Route = createFileRoute("/api/public/contact")({
               <h2>Neue Pilotplatz-Anfrage</h2>
               <p><strong>Name:</strong> ${esc(data.name)}</p>
               <p><strong>Unternehmen:</strong> ${esc(data.company)}</p>
+              <p><strong>Unternehmensgröße:</strong> ${esc(data.companySize)}</p>
               <p><strong>E-Mail:</strong> ${esc(data.email)}</p>
+              <p><strong>Telefon:</strong> ${esc(data.phone)}</p>
               <p><strong>Aktuelle Software:</strong> ${esc(data.currentSoftware || "-")}</p>
               <p><strong>Nachricht:</strong><br>${esc(data.message || "-").replace(/\n/g, "<br>")}</p>
             `;
