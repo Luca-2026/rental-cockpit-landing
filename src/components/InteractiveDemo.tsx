@@ -122,6 +122,17 @@ export function InteractiveDemo() {
   const [confirmed, setConfirmed] = useState(false);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const transcriptRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  function navigateTo(v: NavKey) {
+    setView(v);
+    requestAnimationFrame(() => {
+      const el = containerRef.current;
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  }
 
   const scenario = SCENARIOS[scenarioIdx];
   const offerTotal = scenario.offer.items.reduce((s, i) => s + i.qty * i.price, 0);
@@ -267,7 +278,7 @@ export function InteractiveDemo() {
   }
 
   return (
-    <div className="mt-16 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-primary/10">
+    <div ref={containerRef} className="mt-16 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-primary/10">
       {/* Window chrome */}
       <div className="flex items-center gap-1.5 border-b border-border bg-surface px-3 py-2.5 sm:px-4 sm:py-3">
         <div className="h-2.5 w-2.5 shrink-0 rounded-full bg-destructive/60" />
@@ -350,7 +361,7 @@ export function InteractiveDemo() {
               transcriptRef={transcriptRef}
               offerTotal={offerTotal}
               downloadPdf={downloadPdf}
-              goTo={setView}
+              goTo={navigateTo}
             />
           )}
           {view === "angebote" && <AngeboteView />}
