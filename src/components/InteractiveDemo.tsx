@@ -418,19 +418,22 @@ function DashboardView(props: {
       </div>
 
       <div className="mt-4 rounded-xl border-2 border-accent/40 bg-gradient-to-br from-accent/5 to-transparent p-4 shadow-lg shadow-accent/5">
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2 text-sm font-semibold">
-            <Bot className="h-4 w-4 text-accent" /> KI-Angebotsassistent
-            <span className="rounded-full bg-accent/15 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-accent">
+        <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1">
+          <div className="flex min-w-0 flex-1 items-center gap-2 text-sm font-semibold">
+            <Bot className="h-4 w-4 shrink-0 text-accent" />
+            <span className="truncate">KI-Angebotsassistent</span>
+            <span className="shrink-0 rounded-full bg-accent/15 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-accent">
               Interaktiv
             </span>
           </div>
           {stage === "done" && (
             <button
               onClick={reset}
-              className="inline-flex items-center gap-1 text-[11px] text-muted-foreground transition hover:text-foreground"
+              aria-label="Demo zurücksetzen"
+              className="inline-flex shrink-0 items-center gap-1 text-[11px] text-muted-foreground transition hover:text-foreground"
             >
-              <RotateCcw className="h-3 w-3" /> Zurücksetzen
+              <RotateCcw className="h-3 w-3" />
+              <span className="hidden sm:inline">Zurücksetzen</span>
             </button>
           )}
         </div>
