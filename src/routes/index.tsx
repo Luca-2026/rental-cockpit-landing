@@ -54,7 +54,7 @@ const FAQ_ITEMS = [
   { q: "Welche Module sind beim Launch verfügbar?", a: "Zunächst KI-Angebote und KI-CRM. Operations und integrierte Rechnungsstellung folgen in der Pilotphase modulweise." },
   { q: "Kann ich von meiner aktuellen Vermietsoftware migrieren?", a: "Ja. Wir bieten kostenlose Migration für Pilotkunden. Schnittstellen zu gängigen Vermietsystemen sind in Vorbereitung." },
   { q: "Wo werden meine Daten gespeichert?", a: "Ausschließlich in Deutschland. DSGVO-konform, AVV verfügbar." },
-  { q: "Was kostet Rental Cockpit?", a: "Transparente Pakete ab 499 €/Monat nach offizieller Markteinführung. Pilotkunden erhalten lebenslang vergünstigte Konditionen." },
+  { q: "Was kostet Rental Cockpit?", a: "ab 99 Euro pro Monat je nach Geschäftsgröße und Umsatz über die Plattform. Transparente Pakete ab 499 €/Monat nach offizieller Markteinführung. Pilotkunden erhalten lebenslang vergünstigte Konditionen." },
   { q: "Brauche ich technisches Know-how?", a: "Nein. Onboarding, Migration und Schulung übernehmen wir." },
   { q: "Bin ich an einen langen Vertrag gebunden?", a: "Nein. Monatliche Kündigungsfrist nach dem ersten Pilotjahr." },
 ];
