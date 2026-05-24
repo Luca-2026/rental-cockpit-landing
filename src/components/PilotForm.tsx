@@ -37,14 +37,19 @@ export function PilotForm() {
       return;
     }
     setLoading(true);
-    // Fallback: open prefilled E-Mail (Backend-Anbindung folgt)
-    const body = encodeURIComponent(
-      `Name: ${parsed.data.name}\nUnternehmen: ${parsed.data.company}\nE-Mail: ${parsed.data.email}\nAktuelle Software: ${parsed.data.currentSoftware || "-"}\n\nNachricht:\n${parsed.data.message || "-"}`
-    );
-    const subject = encodeURIComponent("Pilotplatz-Anfrage – Rental Cockpit");
-    window.location.href = `mailto:luca@sandhoff.org?subject=${subject}&body=${body}`;
-    setSubmitted(true);
-    setLoading(false);
+    try {
+      const res = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "pilot", ...parsed.data }),
+      });
+      if (!res.ok) throw new Error("send failed");
+      setSubmitted(true);
+    } catch {
+      setErrors({ form: "Versand fehlgeschlagen. Bitte später erneut versuchen oder direkt an luca@sandhoff.org schreiben." });
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -52,7 +57,7 @@ export function PilotForm() {
       <div className="rounded-xl border border-border bg-card p-6 text-center">
         <div className="font-display text-lg font-semibold">Vielen Dank.</div>
         <p className="mt-2 text-sm text-muted-foreground">
-          Ihre Anfrage wurde vorbereitet. Bitte versenden Sie die geöffnete E-Mail – wir melden uns innerhalb von 2 Werktagen.
+          Ihre Anfrage ist bei uns eingegangen. Eine Bestätigung wurde an Ihre E-Mail-Adresse gesendet – wir melden uns innerhalb von 2 Werktagen.
         </p>
       </div>
     );
@@ -81,6 +86,7 @@ export function PilotForm() {
         </span>
       </label>
       {errors.consent && <p className="-mt-2 text-xs text-destructive">{errors.consent}</p>}
+      {errors.form && <p className="text-xs text-destructive">{errors.form}</p>}
       <button
         type="submit"
         disabled={loading}

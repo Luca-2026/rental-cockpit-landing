@@ -9,8 +9,9 @@ const schema = z.object({
 export function EarlyAccessForm() {
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
     const fd = new FormData(e.currentTarget);
@@ -22,16 +23,26 @@ export function EarlyAccessForm() {
       setError(parsed.error.errors[0]?.message ?? "Eingabe ungültig.");
       return;
     }
-    const subject = encodeURIComponent("Early Access – Rental Cockpit");
-    const body = encodeURIComponent(`Bitte für Early Access vormerken:\n${parsed.data.email}`);
-    window.location.href = `mailto:luca@sandhoff.org?subject=${subject}&body=${body}`;
-    setDone(true);
+    setLoading(true);
+    try {
+      const res = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "early-access", ...parsed.data }),
+      });
+      if (!res.ok) throw new Error("send failed");
+      setDone(true);
+    } catch {
+      setError("Versand fehlgeschlagen. Bitte später erneut versuchen.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (done) {
     return (
       <p className="text-sm text-muted-foreground">
-        Danke. Bitte versenden Sie die geöffnete E-Mail – wir bestätigen Ihre Anmeldung anschließend per Double-Opt-in.
+        Danke. Eine Bestätigung wurde an Ihre E-Mail-Adresse gesendet – Sie stehen jetzt auf der Early-Access-Liste.
       </p>
     );
   }
@@ -48,9 +59,10 @@ export function EarlyAccessForm() {
         />
         <button
           type="submit"
-          className="inline-flex h-11 items-center justify-center rounded-md bg-foreground px-5 text-sm font-semibold text-background hover:opacity-90"
+          disabled={loading}
+          className="inline-flex h-11 items-center justify-center rounded-md bg-foreground px-5 text-sm font-semibold text-background hover:opacity-90 disabled:opacity-60"
         >
-          Vormerken
+          {loading ? "Wird gesendet…" : "Vormerken"}
         </button>
       </div>
       <label className="flex items-start gap-2 text-xs text-muted-foreground">
