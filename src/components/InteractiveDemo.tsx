@@ -514,7 +514,7 @@ function DashboardView(props: {
                       {new Date().toLocaleDateString("de-DE")}
                     </div>
                   </div>
-                  <div className="overflow-hidden rounded-md border border-border">
+                  <div className="overflow-x-auto rounded-md border border-border">
                     <table className="w-full text-xs">
                       <thead className="bg-surface text-muted-foreground">
                         <tr>
