@@ -361,7 +361,7 @@ export function InteractiveDemo() {
               transcriptRef={transcriptRef}
               offerTotal={offerTotal}
               downloadPdf={downloadPdf}
-              goTo={setView}
+              goTo={navigateTo}
             />
           )}
           {view === "angebote" && <AngeboteView />}
