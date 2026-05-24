@@ -267,7 +267,7 @@ export function InteractiveDemo() {
   }
 
   return (
-    <div className="mt-16 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-primary/10">
+    <div className="mt-16 overflow-x-auto rounded-2xl border border-border bg-card shadow-2xl shadow-primary/10">
       {/* Window chrome */}
       <div className="flex items-center gap-1.5 border-b border-border bg-surface px-4 py-3">
         <div className="h-2.5 w-2.5 rounded-full bg-destructive/60" />
@@ -514,7 +514,7 @@ function DashboardView(props: {
                       {new Date().toLocaleDateString("de-DE")}
                     </div>
                   </div>
-                  <div className="overflow-hidden rounded-md border border-border">
+                  <div className="overflow-x-auto rounded-md border border-border">
                     <table className="w-full text-xs">
                       <thead className="bg-surface text-muted-foreground">
                         <tr>
@@ -724,7 +724,7 @@ function RechnungenView() {
 
 function DataTable({ head, rows }: { head: string[]; rows: React.ReactNode[][] }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-border">
+    <div className="overflow-x-auto rounded-xl border border-border">
       <table className="w-full text-sm">
         <thead className="bg-surface text-xs uppercase tracking-wider text-muted-foreground">
           <tr>
