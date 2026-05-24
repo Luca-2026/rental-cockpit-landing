@@ -139,7 +139,7 @@ function Hero() {
           Routine erledigt sich selbst.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
-          <a href="#pilot" className="group inline-flex h-12 items-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90">
+          <a href="#pilot-form" className="group inline-flex h-12 items-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90">
             Pilotplatz anfragen
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
@@ -153,7 +153,8 @@ function Hero() {
           <span className="inline-flex items-center gap-1.5"><Server className="h-3.5 w-3.5" /> Hosting in Deutschland</span>
         </div>
 
-        <ProductMock />
+        <InteractiveDemo />
+
       </div>
     </section>
   );
