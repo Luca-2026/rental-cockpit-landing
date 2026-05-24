@@ -50,10 +50,13 @@ export function EarlyAccessForm() {
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-3">
       <div className="flex flex-col gap-2 sm:flex-row">
+        <label htmlFor="ea-email" className="sr-only">E-Mail-Adresse</label>
         <input
+          id="ea-email"
           name="email"
           type="email"
           required
+          aria-label="E-Mail-Adresse"
           placeholder="ihre@firma.de"
           className="h-11 flex-1 rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
         />
@@ -66,7 +69,13 @@ export function EarlyAccessForm() {
         </button>
       </div>
       <label className="flex items-start gap-2 text-xs text-muted-foreground">
-        <input type="checkbox" name="consent" className="mt-0.5 h-4 w-4 rounded border-input" />
+        <input
+          id="ea-consent"
+          type="checkbox"
+          name="consent"
+          aria-label="Einwilligung Datenverarbeitung"
+          className="mt-0.5 h-4 w-4 rounded border-input"
+        />
         <span>
           Ich willige ein, dass meine E-Mail-Adresse für Produkt-Updates verarbeitet wird. Jederzeit widerrufbar.
           Siehe <a href="/datenschutz" className="underline">Datenschutz</a>.
