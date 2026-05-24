@@ -267,7 +267,7 @@ export function InteractiveDemo() {
   }
 
   return (
-    <div className="mt-16 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-primary/10">
+    <div className="mt-16 overflow-x-auto rounded-2xl border border-border bg-card shadow-2xl shadow-primary/10">
       {/* Window chrome */}
       <div className="flex items-center gap-1.5 border-b border-border bg-surface px-4 py-3">
         <div className="h-2.5 w-2.5 rounded-full bg-destructive/60" />
