@@ -58,12 +58,12 @@ export function EarlyAccessForm() {
           required
           aria-label="E-Mail-Adresse"
           placeholder="ihre@firma.de"
-          className="h-11 flex-1 rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="h-12 w-full flex-1 rounded-md border border-input bg-background px-4 text-sm leading-none shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-ring sm:w-auto"
         />
         <button
           type="submit"
           disabled={loading}
-          className="inline-flex h-11 items-center justify-center rounded-md bg-foreground px-5 text-sm font-semibold text-background hover:opacity-90 disabled:opacity-60"
+          className="inline-flex h-12 w-full items-center justify-center rounded-md bg-foreground px-5 text-sm font-semibold leading-none text-background hover:opacity-90 disabled:opacity-60 sm:w-auto"
         >
           {loading ? "Wird gesendet…" : "Vormerken"}
         </button>
