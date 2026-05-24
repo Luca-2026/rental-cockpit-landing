@@ -724,7 +724,7 @@ function RechnungenView() {
 
 function DataTable({ head, rows }: { head: string[]; rows: React.ReactNode[][] }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-border">
+    <div className="overflow-x-auto rounded-xl border border-border">
       <table className="w-full text-sm">
         <thead className="bg-surface text-xs uppercase tracking-wider text-muted-foreground">
           <tr>
